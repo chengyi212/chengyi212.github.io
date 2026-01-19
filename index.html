@@ -1,49 +1,229 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Cheng Research Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
-    body {
+    body{
       font-family: Arial, Helvetica, sans-serif;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 40px auto;
       padding: 0 20px;
-      line-height: 1.6;
+      line-height: 1.7;
+      color:#111;
     }
-    nav {
-      margin-bottom: 30px;
+
+    nav{
+      margin-bottom: 18px;
       border-bottom: 1px solid #ddd;
       padding-bottom: 10px;
     }
-    nav a {
+    nav a{
       margin-right: 24px;
       text-decoration: none;
       color: #333;
+      font-size: 22px;
+    }
+    nav a:hover{ text-decoration: underline; }
+
+    h1{
+      font-size: 64px;
+      margin: 22px 0 10px 0;
+      letter-spacing: .3px;
+    }
+
+    .hero{
+      width:100%;
+      height: 280px;
+      border-radius: 6px;
+      background-image: url("campus.jpg"); /* campus photo */
+      background-size: cover;
+      background-position: center;
+      margin: 18px 0 22px 0;
+    }
+
+    hr{
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 18px 0 26px 0;
+    }
+
+    .pi{
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 26px;
+      align-items: start;
+      margin-top: 12px;
+    }
+    .pi img{
+      width:100%;
+      display:block;
+      border-radius: 6px;
+    }
+
+    .pi h2{
+      margin: 0;
+      font-size: 30px;
+    }
+    .muted{ color:#666; }
+
+    .bio{
+      margin-top: 10px;
+      font-size: 18px;
+      color:#222;
+    }
+    .bio em{ font-style: italic; }
+
+    .btns{
+      margin-top: 14px;
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      padding: 9px 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      color:#111;
+      font-size: 16px;
+    }
+    .btn:hover{ border-color:#bbb; }
+    .btn.primary{
+      background:#333;
+      color:#fff;
+      border-color:#333;
+    }
+    .btn.primary:hover{ background:#111; border-color:#111; }
+
+    h3{
+      margin: 26px 0 8px 0;
+      font-size: 28px;
+    }
+
+    .card{
+      border-top: 1px solid #eee;
+      padding-top: 16px;
+      margin-top: 12px;
+    }
+
+    .links{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .links a{
+      display:block;
+      padding: 8px 0;
+      text-decoration:none;
+      color:#333;
       font-size: 18px;
     }
-    nav a:hover {
-      text-decoration: underline;
+    .links a:hover{ text-decoration: underline; }
+
+    details{ margin-top: 12px; }
+    summary{ cursor:pointer; color:#333; }
+
+    @media (max-width: 900px){
+      h1{ font-size: 46px; }
+      .pi{ grid-template-columns: 1fr; }
+      .hero{ height: 220px; }
+      .links{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="team.html">Team</a>
-    <a href="research.html">Research</a>
-    <a href="publications.html">Publications</a>
-    <a href="news.html">News</a>
-    <a href="join.html">Join us</a>
-  </nav>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="team.html">Team</a>
+  <a href="research.html">Research</a>
+  <a href="publications.html">Publications</a>
+  <a href="news.html">News</a>
+  <a href="join.html">Join us</a>
+</nav>
 
-  <h1>Cheng Research Lab</h1>
+<h1>Cheng Research Lab</h1>
 
-  <p>
-    This research group is currently being established.
-  </p>
+<div class="hero" aria-label="Campus view"></div>
+
+<div class="pi">
+  <div>
+    <img src="yi-cheng.jpg" alt="Yi Cheng">
+  </div>
+
+  <div>
+    <h2>Yi Cheng <span class="muted" style="font-weight:400;">| Incoming Assistant Professor</span></h2>
+    <div class="muted">
+      Laboratory of Advanced Materials, College of Smart Materials and Future Energy, Fudan University
+    </div>
+
+    <div class="bio">
+      Yi Cheng is an incoming Assistant Professor of the Laboratory of Advanced Materials, College of Smart Materials and Future Energy,
+      Fudan University. He received his B.S. degree from Fudan University and his Ph.D. degree from Peking University. He subsequently
+      carried out postdoctoral research at Rice University. He has published over 50 peer-reviewed journal articles, including more than
+      20 papers as first or corresponding author in leading journals such as <em>Nat. Sustain.</em>, <em>Nat. Water</em>, <em>Nat. Chem. Eng.</em>,
+      <em>Nat. Commun.</em>, and <em>J. Am. Chem. Soc.</em> He is also an inventor on more than 30 granted or filed patents in China and the
+      United States, with several technologies currently advancing toward industrial implementation.
+    </div>
+
+    <div class="btns">
+      <a class="btn primary" href="team.html">Full bio (Team)</a>
+      <a class="btn" href="research.html">Research overview</a>
+      <a class="btn" href="publications.html">Publications</a>
+      <a class="btn" href="join.html">Join us</a>
+    </div>
+
+    <details>
+      <summary>中文简介（点击展开）</summary>
+      <div class="bio" style="margin-top:10px;">
+        程一，复旦大学智能材料与未来能源学院先进材料实验室助理教授（拟入职）。本科毕业于复旦大学，博士毕业于北京大学，随后在美国莱斯大学从事博士后研究。
+        迄今已发表学术论文50余篇，其中20余篇以第一作者或通讯作者身份发表于 <em>Nat. Sustain.</em>、<em>Nat. Water</em>、<em>Nat. Chem. Eng.</em>、
+        <em>Nat. Commun.</em>、<em>J. Am. Chem. Soc.</em> 等期刊。此外，已在中美两国申请或授权专利30余项，多项技术正推进产业化应用。
+      </div>
+    </details>
+  </div>
+</div>
+
+<hr>
+
+<div class="card">
+  <h3>Research Directions</h3>
+  <div class="bio">
+    Our group operates at the intersection of materials science, chemistry, and environmental engineering, with a particular focus on
+    Flash Joule Heating (FJH) and related extreme-condition electrothermal synthesis technologies. We investigate transformation mechanisms
+    under extreme, transient electrothermal conditions, aiming to develop efficient, sustainable, and scalable strategies for solid waste
+    valorization, resource recovery, and functional material synthesis.
+  </div>
+  <div class="btns">
+    <a class="btn primary" href="research.html">Go to Research</a>
+  </div>
+</div>
+
+<hr>
+
+<div class="card">
+  <h3>Links</h3>
+  <div class="links">
+    <div>
+      <a href="https://www.fudan.edu.cn/" target="_blank" rel="noopener">Fudan University</a>
+      <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
+    </div>
+    <div>
+      <a href="https://www.rice.edu/" target="_blank" rel="noopener">Rice University</a>
+      <a href="https://tour.rice.edu/" target="_blank" rel="noopener">James M. Tour Group</a>
+    </div>
+    <div>
+      <a href="https://www.pku.edu.cn/" target="_blank" rel="noopener">Peking University</a>
+      <a href="https://www.fudan.edu.cn/" target="_blank" rel="noopener">Personal Page (Placeholder)</a>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

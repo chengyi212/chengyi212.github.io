@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Join Us | Cheng Research Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.7;
+    }
+    nav {
+      margin-bottom: 30px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+    nav a {
+      margin-right: 24px;
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    .lang-toggle {
+      margin: 10px 0 30px 0;
+    }
+    .lang-toggle button {
+      padding: 6px 14px;
+      font-size: 15px;
+      margin-right: 8px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+    }
+    .lang-toggle button.active {
+      background: #333;
+      color: #fff;
+      border-color: #333;
+    }
+
+    h1 { margin-top: 0; }
+    h2 { margin-top: 24px; }
+    ul { margin-left: 18px; }
+    .muted { color: #555; }
+
+    .lang { display: none; }
+    .lang.active { display: block; }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="team.html">Team</a>
+  <a href="research.html">Research</a>
+  <a href="publications.html">Publications</a>
+  <a href="news.html">News</a>
+  <a href="join.html">Join us</a>
+</nav>
+
+<div class="lang-toggle">
+  <button id="btn-en" class="active" onclick="showLang('en')">English</button>
+  <button id="btn-zh" onclick="showLang('zh')">中文</button>
+</div>
+
+<!-- ================= ENGLISH ================= -->
+<div id="en" class="lang active">
+
+<h1>Join Us</h1>
+
+<p>
+We are actively seeking motivated and creative scientists to join our team.
+Applicants with strong interests and/or training in materials science, chemistry,
+environmental science, and chemical engineering are welcome.
+</p>
+
+<h2>Who we are looking for</h2>
+<ul>
+  <li>Solid academic training in materials, chemistry, environmental science, chemical engineering, or related fields</li>
+  <li>Strong ability to conduct independent research and prepare scientific manuscripts; proficiency in English reading and writing</li>
+  <li>Prior research experience in electrothermal technologies, resource circularity, environmental remediation, or functional materials is a plus</li>
+</ul>
+
+<h2>How to apply</h2>
+<p>
+Please contact Dr. Yi Cheng via email:
+<a href="mailto:yi_cheng212@163.com">yi_cheng212@163.com</a>.
+</p>
+
+<h3>Postdoctoral researchers</h3>
+<ul>
+  <li>(1) CV</li>
+  <li>(2) A one-page summary of research interests and background (figures allowed)</li>
+  <li>(3) Two representative publications</li>
+</ul>
+<p>
+Email subject: <strong>Postdoc Application + Your Name</strong>
+</p>
+
+<h3>Graduate students</h3>
+<ul>
+  <li>(1) CV</li>
+  <li>(2) A brief description of research interests and background</li>
+</ul>
+<p>
+Email subject: <strong>Graduate Student Inquiry + Your Name</strong>
+</p>
+
+<h3>Research assistants</h3>
+<ul>
+  <li>(1) CV</li>
+  <li>(2) A brief summary of research experiences and skillsets</li>
+</ul>
+<p>
+Email subject: <strong>Research Assistant Application + Your Name</strong>
+</p>
+
+<p class="muted">
+Applications are reviewed on a rolling basis. Shortlisted candidates will be contacted for an online meeting.
+</p>
+
+</div>
+
+<!-- ================= CHINESE ================= -->
+<div id="zh" class="lang">
+
+<h1>加入我们</h1>
+
+<p>
+课题组现诚邀具有探索精神和科研热情的优秀青年学者加入。
+欢迎具有材料、化学、环境、化工等相关学科背景的研究人员申请。
+</p>
+
+<h2>基本要求</h2>
+<ul>
+  <li>具备材料、化学、环境、化工等相关方向扎实的专业背景</li>
+  <li>具备较强的独立科研能力和学术写作能力，具有良好的英文阅读与写作水平</li>
+  <li>在资源循环、环境治理或功能材料制备等方向具有研究经验者优先考虑</li>
+</ul>
+
+<h2>申请方式</h2>
+<p>
+请将申请材料发送至邮箱：
+<a href="mailto:yi_cheng212@163.com">yi_cheng212@163.com</a>
+</p>
+
+<h3>博士后</h3>
+<ul>
+  <li>个人简历（教育与工作经历、研究内容简介、论文清单、获奖情况、研究技能等）</li>
+  <li>代表性论文（2 篇）</li>
+</ul>
+<p>
+邮件标题请注明：<strong>博士后申请 + 姓名</strong>
+</p>
+
+<h3>研究生</h3>
+<ul>
+  <li>个人简历</li>
+  <li>研究兴趣与背景简介</li>
+</ul>
+<p>
+邮件标题请注明：<strong>研究生申请 + 姓名</strong>
+</p>
+
+<h3>科研助理</h3>
+<ul>
+  <li>个人简历（教育背景、工作经历、主要技能等）</li>
+</ul>
+<p>
+邮件标题请注明：<strong>科研助理申请 + 姓名</strong>
+</p>
+
+<p class="muted">
+课题组将即时关注申请材料，并尽快与合适的申请者安排线上交流。
+</p>
+
+</div>
+
+<script>
+function showLang(lang) {
+  document.getElementById('en').classList.remove('active');
+  document.getElementById('zh').classList.remove('active');
+  document.getElementById('btn-en').classList.remove('active');
+  document.getElementById('btn-zh').classList.remove('active');
+
+  document.getElementById(lang).classList.add('active');
+  document.getElementById('btn-' + lang).classList.add('active');
+}
+</script>
+
+</body>
+</html>

@@ -176,10 +176,11 @@ Bowen Li*, Dallin Arnold, Yuchen Rui, Ana L. Santos, Jacob L. Beckham, Shichen X
   }
 
   // grab the LAST 4-digit year (more robust)
-  function extractYear(line) {
-    const m = line.match(/(19|20)\d{2}(?!.*(19|20)\d{2})/);
-    return m ? m[0] : "Unknown";
-  }
+ function extractYear(line) {
+  // 只识别真正的“出版年份”，即 ", 2021," 这种格式
+  const m = line.match(/,\s*(19|20)\d{2}\s*,/);
+  return m ? m[0].replace(/[^0-9]/g, '') : "Unknown";
+}
 
   // ---------- rendering ----------
   function getLines() {

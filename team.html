@@ -23,29 +23,27 @@
       color: #333;
       font-size: 18px;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
+    nav a:hover { text-decoration: underline; }
+
     .pi {
       display: grid;
-      grid-template-columns: 1fr 2.5fr;
+      grid-template-columns: 280px 1fr;
       gap: 30px;
       margin-top: 30px;
+      align-items: start;
     }
+
     .pi img {
-      width: 100%;
-      max-width: 260px;
+      width: 260px;
+      height: auto;
+      display: block;
       border-radius: 6px;
+      border: 1px solid #eee;
     }
-    h1, h2 {
-      margin-top: 0;
-    }
-    .muted {
-      color: #555;
-    }
-    ul {
-      margin-top: 6px;
-    }
+
+    h1, h2 { margin-top: 0; }
+    .muted { color: #555; }
+    ul { margin-top: 6px; }
   </style>
 </head>
 
@@ -64,9 +62,10 @@
 
 <div class="pi">
   <div>
-    <img src="https://chengyi212.github.io/yi-cheng.jpg" alt="Yi Cheng">
+    <!-- 加 ?v=1 用来强制刷新缓存 -->
+    <img src="https://chengyi212.github.io/yi-cheng.jpg?v=1" alt="Yi Cheng">
     <p style="margin-top:12px;">
-      <a href="https://scholar.google.com/citations?user=8b0HLPEAAAAJ&hl=zh-CN&authuser=1" target="_blank">
+      <a href="https://scholar.google.com/citations?user=8b0HLPEAAAAJ&hl=zh-CN&authuser=1" target="_blank" rel="noopener">
         Google Scholar
       </a><br>
       <a href="mailto:yi_cheng212@163.com">yi_cheng212@163.com</a>

@@ -14,14 +14,17 @@
     h1 { margin-top: 0; }
     h2 { margin-top: 26px; border-top: 1px solid #eee; padding-top: 18px; }
     .muted { color: #555; }
-    .toolbar { margin: 10px 0 18px 0; display: flex; gap: 10px; flex-wrap: wrap; }
+    .note { font-size: 14px; color: #666; margin-top: 6px; }
+    .toolbar { margin: 10px 0 18px 0; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
     input { padding: 8px 10px; font-size: 16px; width: 420px; max-width: 100%; }
     button { padding: 8px 10px; font-size: 16px; cursor: pointer; }
     ol { padding-left: 22px; }
     li.pub { margin: 10px 0; }
-    .hl { font-weight: 700; } /* highlight name */
-    .note { font-size: 14px; color: #666; margin-top: 6px; }
-    .badge { display: inline-block; font-size: 12px; border: 1px solid #ddd; border-radius: 999px; padding: 2px 8px; margin-left: 6px; color: #444; }
+    .hl { font-weight: 800; color: #111; }
+    .year { font-size: 22px; }
+    .small { font-size: 14px; color: #666; }
+    details { margin-top: 12px; }
+    textarea { width: 100%; height: 520px; margin-top: 12px; font-size: 14px; line-height: 1.6; }
   </style>
 </head>
 
@@ -36,160 +39,190 @@
 </nav>
 
 <h1>Publications</h1>
-<p class="muted">Selected and full publications list (manually maintained).</p>
+<p class="muted">Full publications list (manually maintained).</p>
+<div class="note">Notes: <strong>#</strong> Co-first author; <strong>*</strong> Corresponding author.</div>
+
+<details>
+  <summary class="small">Edit / paste your publications list (numbered list)</summary>
+  <textarea id="pubText">
+1. Yi Cheng#, Jinhang Chen#, Bing Deng#, Weiyin Chen, Karla J. Silva, Lucas Eddy, Gang Wu, Ying Chen, Bowen Li, Carter Kittrell, Shichen Xu, Tengda Si, Angel A. Martí, Boris I. Yakobson, Yufeng Zhao*, James M. Tour*. Flash Upcycling of Waste Glass Fibre-Reinforced Plastics to Silicon Carbide. Nat. Sustain., 2024, 7, 452–462.
+2. Yi Cheng*, Alex Lathem, Phelecia Scotland, Qiming Liu, Jinhang Chen, Karla J. Silva, Tianyou Xie, Bowen Li, Youngkun Chung, Ralph Abdel Nour, Jaheo Shin, Lucas Eddy, Carter Kittrell, Haoxin Ye, Shihui Chen, Tenda Si, Obinna E. Onah, Michael Wong, Christopher Griggs, James M. Tour*. Waste-PFAS Assisted Electrothermal Fluorination for Lithium Recovery from Brine. Nat. Water., 2026, Accepted.
+3. Yi Cheng#, Bing Deng#,*, Phelecia Scotland, Lucas Eddy, Bo Wang, Bowen Li, Karla J. Silva, Kevin M. Wyss, Mine G. Ucak-Astarlioglu, Jinhang Chen, Qiming Liu, Tengda Si, Shichen Xu, Xiaodong Gao, Debadrita Jana, Mark Albert Torres, Michael S. Wong, Boris I. Yakobson, Yufeng Zhao*, James M. Tour*. Electrothermal Mineralization of Per- and Polyfluoroalkyl Substances for Soil Remediation. Nat. Commun., 2024, 15, 6117.
+4. Yi Cheng, James M. Tour*. Joule-heating Reactor Powers Scalable Plastic Upcycling. Nat. Chem. Eng., 2025, 2, 405–406.
+5. Yi Cheng#,*, Phelecia Scotland#, Qiming Liu, Tianyou Xie, Jaeho Shin, Victoria Granja, Karla J. Silva, Jinhang Chen, Tarence Rice, Chi Hun Choi, Carolyn H. Teng, John Li, Lorenzo Castelli, Lucas Eddy, Zicheng Wang, Mine G. Ucak-Astarlioglu, Yimo Han, Geoff Wehmeyer, Boris I. Yakobson, C. Fred Higgs III, Yufeng Zhao*, James M. Tour*. Fluorine-Assisted Flash Synthesis of Morphology Controllable Carbide Materials. Matter, 2026, Accepted.
+6. Yi Cheng#,*, Jin Xie#, Xu Cheng#, Guang Cui, Shuting Cheng, Wentao Yu, Kun Wang, Xu Zhou, Ke Chen, Zhipei Sun*, Kaihui Liu*, Zhongfan Liu*. Vertically Stacked Boron Nitride/Graphene for Tunable Antiresonant Hollow Core Fiber. J. Am. Chem. Soc., 2025, 147, 33735–33742.
+7. Yi Cheng#,*, Jinhang Chen#, Weiyin Chen#, Qiming Liu, Obinna E. Onah, Zicheng Wang, Gang Wu, Tianyou Xie, Lucas Eddy, Boris I. Yakobson, Ju Li*, Yufeng Zhao*, James M. Tour*. Rapid Electrothermal Rejuvenation of Spent Lithium Cobalt Oxide Cathode. Energy Environ. Sci., 2025, 18, 608–6093.
+8. Yi Cheng, James M. Tour*. Thermodynamic-Driven Graphene Layer Control: Converging Paradigms from Self-Correcting and Edge-Feeding Growth. Sci. Bull., 2025, 70, 3679–3681.
+9. Yi Cheng, Shuting Cheng, Bingbing Chen, Jun Jiang, Ce Tu, Wenjuan Li, Yuyao Yang, Kewen Huang, Kun Wang, Hao Yuan, Junliang Li, Yue Qi*, Zhongfan Liu*. Graphene Infrared Radiation Management Targeting Photothermal Conversion for Electric-Energy-Free Crude Oil Collection. J. Am. Chem. Soc., 2022, 144, 15562–15568.
+10. Yi Cheng#, Guang Cui#, Changhao Liu#, Zhetong Liu, Longge Yan, Bingyao Liu, Hao Yuan, Pengcheng Shi, Jun Jiang, Kewen Huang, Kun Wang, Shuting Cheng, Junliang Li, Peng Gao, Xinfang Zhang*, Yue Qi*, Zhongfan Liu*. Electric Current Aligning Component Units during Graphene Fiber Joule Heating. Adv. Funct. Mater., 2022, 32, 210349.
+11. Yi Cheng#, Wentao Yu#, Jin Xie#, Ruoyu Wang, Guang Cui, Xu Cheng, Mengwen Li, Kun Wang, Junliang Li, Zhipei Sun, Yue Qi*, Ke Chen*, Kaihui Liu*, Zhongfan Liu*. Controllable Growth of Graphene Photonic Crystal Fiber with Tunable Optical Nonlinearity. ACS Photonics, 2022, 9, 961–968.
+12. Yi Cheng, Kun Wang, Yue Qi*, Zhongfan Liu*. Chemical Vapor Deposition Method for Graphene Fiber Materials. Acta Phys. Chim. Sin., 2022, 38, 2006046.
+13. Yi Cheng, Jie Tang, Yi-Min Zhu, Yu Chang*, Zhen-Guo Yang*. 3D Porous Polysiloxane Ion-Adsorption Films for Additive Fabrication of Conductive Patterns with High Adhesion. Electrochim. Acta, 2018, 285, 111–119.
+14. Weiyin Chen#, Yi Cheng#, Jinhang Chen#, Ksenia V. Bets, Rodrigo V. Salvatierra, Chang Ge, John Tianci Li, Zicheng Wang, Duy Xuan Luong, Carter Kittrell, Emily A. McHugh, Guanhui Gao, Bing Deng, Yimo Han, Boris I. Yakobson*, James M. Tour*. Nondestructive Flash Cathode Recycling. Nat. Commun., 2024, 15, 6250.
+15. Bing Deng#,*, Robert A. Carter#, Yi Cheng#, Yuan Liu, Lucas Eddy, Kevin M. Wyss, Mine G. Ucak-Astarlioglu, Duy Xuan Luong, Khalil JeBailey, Carter Kittrell, Debadrita Jana, Mark Albert Torres, Janet Braam, James M. Tour*. High-Temperature Electrothermal Remediation of Multi-pollutants in Soil. Nat. Commun., 2023, 14, 6371.
+16. Jinhang Chen#, Yi Cheng#,*, Phelecia Scotland, Jaeho Shin, Lorenzo Castelli, Qiming Liu, John Li, Kevin Wyss, Weiyin Chen, Kevin M. Wyss, Obinna E. Onah, Geoff Wehmeyer, Yufeng Zhao*, James M. Tour*. Dimension Engineering of Boron Nitride Nanostructures through Catalytic Flash Joule Heating. ACS Nano, 2025, 19, 24904–24911.
+17. Mingjin Du#, Yi Cheng#, Tianyou Xie#, Zhiliang Yang, Shen Xi, Karla J. Silva, Ma Chao, Channa Wang, Xiangbo Liu, Haiming Wang, Xiangdong Ding, Chengming Li*, James M. Tour*, Changsheng Xiang*. Nanodiamond Synthesis from Coal via Flash Joule Heating. ACS Nano, 2025, 19, 38942–38953.
+18. Jinhang Chen#, Obinna E. Onah#, Yi Cheng#, Karla J. Silva, Chi Hun Choi, Weiyin Chen, Shichen Xu, Lucas Eddy, Boris I. Yakobson, Yufeng Zhao*, James M. Tour*. Rapid Interphase Engineering for Fast-Charging LiFePO4 Cathodes. Small Methods, 2025, 9, 2400680.
+19. Guang Cui#, Yi Cheng#, Can Liu#, Kewen Huang, Junliang Li, Puxin Wang, Xiaojie Duan, Ke Chen*, Kaihui Liu*, Zhongfan Liu*. Massive Growth of Graphene Quartz Fiber as a Multifunctional Electrode. ACS Nano, 2020, 14, 5938–5945.
+20. Jiang Jun#, Yi Cheng#, Xiucai Sun#, Kewen Huang, Kun Wang, Shuting Cheng, Hao Yuan, Ruojuan Liu, Wenjuan Li, Hui Zhang, Junliang Li, Ce Tu, Yue Qi*, Zhongfan Liu*. Flexible Full-surface Conformal Encapsulation for Each Fiber in Graphene Glass Fiber Fabric against Thermal Oxidation. ACS Appl. Mater. Interfaces, 2022, 14, 19889–19896.
+21. Ke Chen#, Xu Zhou#, Xu Cheng#, Ruixi Qiao, Yi Cheng, Can Liu, Yadian Xie, Wentao Yu, Fengrui Yao, Zhipei Sun, Feng Wang, Kaihui Liu*, Zhongfan Liu*. Graphene Photonic Crystal Fibre with Strong and Tunable Light-Matter Interaction. Nat. Photonics, 2019, 13, 754–759.
+22. Yadian Xie#, Ting Cheng#, Can Liu#, Ke Chen, Yi Cheng, Zhaolong Chen, Lu Qiu, Guang Cui, Yue Yu, Lingzhi Cui, Mengtao Zhang, Jin Zhang, Feng Ding*, Kaihui Liu*, Zhongfan Liu*. Ultrafast Catalyst-Free Graphene Growth on Glass Assisted by Local Fluorine Supply. ACS Nano, 2019, 13, 10272–10278.
+23. Xu Cheng#, Xu Zhou#, Langyi Tao#, Wentao Yu#, Can Liu, Yi Cheng, Chaojie Ma, Nianze Shang, Jin Xie, Kaihui Liu*, Zhongfan Liu*. Sandwiched Graphene/hBN/Graphene Photonic Crystal Fibers with High Electro-Optical Modulation Depth and Speed. Nanoscale, 2020, 12, 14472–14478.
+24. Xuejuan Meng, Yi Cheng, Puxin Wang, Ke Chen, Zhaolong Chen, Xiaojun Liu, Xuefeng Fu, Kun Wang, Kaihui Liu, Zhongfan Liu, Xiaojie Duan*. Enhanced Hemocompatibility of a Direct Chemical Vapor Deposition-Derived Graphene Film. ACS Appl. Mater. Interfaces, 2021, 13, 4835–4843.
+25. Zhou Yang, Yue Zhang*, Yi Cheng, Zhongfan Liu, Songze Chen*. Flow Characteristics of Low-Pressure Chemical Vapor Deposition in the Micro-Channel. Phys. Fluids, 2021, 33, 082012.
+26. Guang Cui#, Zhe Peng#, Xiaoyan Chen#, Yi Cheng, Lin Lu, Shubo Cao, Sudong Ji, Guoxin Qu, Lu Zhao, Shaokai Wang, Shida Wang, Yizhen Li, Haina Ci*, Maoyuan Li*, Zhongfan Liu*. Free-standing Graphene Fabric Film for Flexible Infrared Camouflage. Adv. Sci., 2021, 9, 2105004.
+27. Hao Yuan, Hui Zhang, Kewen Huang, Yi Cheng, Kun Wang, Shuting Cheng, Wenjuan Li, Jun Jiang, Junliang Li, Ce Tu, Xiaobai Wang*, Yue Qi*, Zhongfan Liu*. Dual-Emitter Graphene Glass Fiber Fabric for Radiant Heating. ACS Nano, 2022, 16, 2577–2584.
+28. Kun Wang#, Shuting Cheng#, Qingmei Hu#, Feng Yu, Yi Cheng, Kewen Huang, Hao Yuan, Jun Jiang, Wenjuan Li, Junliang Li, Shichen Xu, Jianbo Yin, Yue Qi*, Zhongfan Liu*. Vertical Graphene-Coated Cu Wire for Enhanced Tolerance to High Current Density in Power Transmission. Nano Res., 2022, 15, 9727–9733.
+29. Shuting Cheng#, Mian Cheng#, Kun Wang#, Qingqing Liu, Yi Cheng, Ruihua Dong, Kewen Huang, Hao Yuan, Jun Jiang, Wenjuan Li, Junliang Li, Ce Tu, Jian Liu, Xingyu Jiang, Yue Qi*, Zhongfan Liu*. Multifunctional Glass Fiber Filter Modified with Vertical Graphene for One-Step Dynamic Water Filtration and Disinfection. J. Mater. Chem. A, 2022, 10, 12125–12131.
+30. Ruojuan Liu#, Hao Yuan#, Junliang Li, Kewen Huang, Kun Wang, Yi Cheng, Shuting Cheng, Wenjuan Li, Jun Jiang, Ce Tu, Yue Qi*, Zhongfan Liu*. Complementary Chemical Vapor Deposition Fabrication for Large-Area Uniform Graphene Glass Fiber Fabric. Small Methods, 2022, 6, 2200499.
+31. Nianze Shang, Yi Cheng, Shen Ao, Gulimire Tuerdi, Mengwen Li, Xiaoyu Wang, Hao Hong, Zehui Li, Xiaoyan Zhang*, Wangyang Fu*, Kaihui Liu*, Zhongfan Liu*. Graphene Photonic Crystal Fiber Based Fluid Sensor towards Distributed Environmental Monitoring. Acta Phys. Chim. Sin., 2022, 38, 2108041.
+32. Kun Wang#, Shuting Cheng#, Jiawei Yang#, Yi Cheng, Qing Ci, Hao Yuan, Kewen Huang, Ruojuan Liu, Wenjuan Li, Junliang Li, Ce Tu, Fushun Liang, Yuyao Yang, Jianbo Sun, Qingmei Hu, Jianbo Yin, Baolu Guan, Xingang Ren, Yue Qi*, Zhongfan Liu*. Bush-Shaped Vertical Graphene/Nichrome Wire for Blackbody-Like Radiative Heating. Adv. Funct. Mater., 2022, 32, 2208785.
+33. Ruojuan Liu#, Zhe Peng#, Xiaoli Sun#, Zhaolong Chen#, Zhi Li, Haina Ci, Bingzhi Liu, Yi Cheng, Bei Jiang, Junxiong Hu, Wanjian Yin*, Jingyu Sun*, Zhongfan Liu*. CO2 Promoted Transfer-Free Growth of Conformal Graphene. Nano Res., 2023, 16, 6334–6342.
+34. Hao Yuan#, Ruojuan Liu#, Shuting Cheng, Wenjuan Li, Mingyang Ma, Kewen Huang, Junliang Li, Yi Cheng, Kun Wang, Yuyao Yang, Fushun Liang, Ce Tu, Xiaobai Wang*, Yue Qi*, Zhongfan Liu*. Scalable Fabrication of Dual-Function Fabric for Zero-Energy Thermal Environmental Management through Multiband, Synergistic, and Asymmetric Optical Modulations. Adv. Mater., 2023, 35, 2209897.
+35. Bing Deng*, Wei Meng, Paul A. Advincula, Lucas Eddy, Mine G. Ucak-Astarlioglu, Kevin M. Wyss, Weiyin Chen, Robert A. Carter, Gang Li, Yi Cheng, Satish Nagarajaiah*, James M. Tour*. Heavy Metal Removal from Coal Fly Ash for Low Carbon Footprint Cement. Commun. Eng., 2023, 2, 13.
+36. Weiyin Chen#, Jinhang Chen#, Ksenia V. Bets, Rodrigo V. Salvatierra, Kevin M. Wyss, Guanhui Gao, Chi Hun Choi, Bing Deng, Xin Wang, John Tianci Li, Carter Kittrell, Nghi La, Lucas Eddy, Phelecia Scotland, Yi Cheng, Shichen Xu, Bowen Li, Mason B. Tomson, Yimo Han, Boris I. Yakobson, James M. Tour*. Battery Metal Recycling by Flash Joule Heating. Sci. Adv., 2023, 9, eadh5131.
+37. Bing Deng#,*, Zhe Wang#, Chi Hun Choi, Gang Li, Zhe Yuan, Jinhang Chen, Duy Xuan Luong, Lucas Eddy, Bongki Shin, Alexander Lathem, Weiyin Chen, Yi Cheng, Shichen Xu, Qiming Liu, Yimo Han, Boris I. Yakobson, Yufeng Zhao*, James M. Tour*. Kinetically Controlled Synthesis of Metallic Glass Nanoparticles with Expanded Composition Space. Adv. Mater., 2024, 36, 2309956.
+38. Shuting Cheng#, Kun Wang#, Shichen Xu#, Yi Cheng, Ruojuan Liu, Kewen Huang, Hao Yuan, Wenjuan Li, Yuyao Yang, Fushun Liang, Fan Yang, Kangyi Zheng, Zhiwei Liang, Ce Tu, Mengxiong Liu, Xiaomin Yang, Jingnan Wang, Xuzhao Gai, Yuejie Zhao, Xiaobai Wang*, Yue Qi*, Zhongfan Liu*. Co-Enhancement of Thermal Conduction and Radiation through Morphologies Controlling of Graphene Functional Layer for Chip Thermal Management. Nano Res., 2024, 17, 8885–8892.
+39. Kun Wang#, Xiucai Sun#, Shuting Cheng#, Yi Cheng, Kewen Huang, Ruojuan Liu, Hao Yuan, Wenjuan Li, Fushun Liang, Yuyao Yang, Fan Yang, Kangyi Zheng, Zhiwei Liang, Ce Tu, Mengxiong Liu, Mingyang Ma, Yunsong Ge, Muqiang Jian, Wanjian Yin, Yue Qi*, Zhongfan Liu*. Multispecies-Coadsorption-Induced Rapid Preparation of Graphene Glass Fiber Fabric and Applications in Flexible Pressure Sensor. Nat. Commun., 2024, 15, 5040.
+40. Wenjuan Li#, Fushun Liang#, Xiucai Sun#, Kangyi Zheng, Ruojuan Liu, Hao Yuan, Shuting Cheng, Jingnan Wang, Yi Cheng, Kewen Huang, Kun Wang, Yuyao Yang, Fan Yang, Ce Tu, Xinyu Mao, Wan-Jian Yin, Ali Cai, Xiaobai Wang*, Yue Qi*, Zhongfan Liu*. Graphene-skinned Alumina Fiber Fabricated through Metalloid-Catalytic Graphene CVD Growth on Nonmetallic Substrate and Its Mass Production. Nat. Commun., 2024, 15, 6825.
+41. Kewen Huang#, Fushun Liang#, Jianbo Sun#, Qinchi Zhang, Zhihao Li, Shuting Cheng, Wenjuan Li, Hao Yuan, Ruojuan Liu, Yunsong Ge, Yi Cheng, Kun Wang, Jun Jiang, Yuyao Yang, Mingyang Ma, Fan Yang, Ce Tu, Qin Xie, Wanjian Yin, Xiaobai Wang*, Yue Qi*, Zhongfan Liu*. Overcoming the Incompatibility between Electrical Conductivity and Electromagnetic Transmissivity: A Graphene Glass Fiber Fabric Design Strategy. Adv. Mater., 2024, 36, 2313752.
+42. Huiyi Dong, Lu Wang, Yi Cheng, Huiyue Sun, Tianqi You, Jingjing Qie, Yifan Li, Wuxing Hua*, Ke Chen*. Flash Joule Heating: A Promising Method for Preparing Heterostructure Catalysts to Inhibit Polysulfide Shuttling in Li–S Batteries. Adv. Sci., 2024, 11, 2405351.
+43. Karla J. Silva, Kevin M. Wyss, Carolyn H. Teng, Yi Cheng, Lucas J. Eddy, James M. Tour*. Graphene Derived from Municipal Solid Waste. Small, 2024, 2311021.
+44. Bing Deng#,*, Shichen Xu#, Lucas Eddy, Jaeho Shin, Yi Cheng, Carter Kittrell, Khalil JeBailey, Justin Sharp, Long Qian, Shihui Chen, James M. Tour*. Flash Separation of Metals by Electrothermal Chlorination. Nat. Chem. Eng., 2024, 1, 627–637.
+45. Yuyao Yang#, Hao Yuan#, Yi Cheng, Fan Yang, Kewen Huang, Kun Wang, Shuting Cheng, Ruojuan Liu, Wenjuan Li, Fushun Liang, Kangyi Zheng, Longfei Liu, Ce Tu, Xiaobai Wang, Yue Qi*, Zhongfan Liu*. Fluid-dynamics-rectified CVD Preparing Graphene Fabric and Its Application in Natural Energy Harvest. J. Am. Chem. Soc., 2024, 46, 25035–25046.
+46. Lucas Eddy, Jaeho Shin, Yi Cheng, Chi Hun Choi, Carolyn Teng, Phelecia Scotland, Shichen Xu, Alexander Lathem, Shihui Chen, Carter Kittrell, Yimo Han, James M. Tour*. Kilogram Flash Joule Heating Synthesis with an Arc Welder. ACS Nano, 2024, 18, 34207–34218.
+47. Phelecia Scotland, Kevin M. Wyss, Yi Cheng, Lucas Eddy, Jacob L. Beckham, Youngkun Chung, Justin Sharp, Chi Hun Choi, Tengda Si, Bo Wang, Juan Donoso, Bing Deng, Yu-Yi Shen, Sarah Grace Zetterholm, Christopher Griggs, Yimo Han, Mason Tomson, Michael Wong, Boris I. Yakobson, Yufeng Zhao*, James M. Tour*. Mineralization of Captured Perfluorooctanoic Acid (PFOA) and Perfluorooctane Sulfonic Acid (PFOS) at Zero Net Cost Using Flash Joule Heating. Nat. Water, 2025, 3, 486–496.
+48. Bing Deng#,*, Zhen-Yu Wu#, Erkang Feng, Lu Ma, Zhe Wang, Jinhang Chen, Lucas Eddy, Alexander Lathem, Teng Wang, Weiyin Chen, Yi Cheng, Shichen Xu, Qiming Liu, Boris I. Yakobson, Haotian Wang*, Yufeng Zhao*, James M. Tour*. Coupling Amorphization and Compositional Optimization of Ternary Metal Phosphides toward High-Performance Electrocatalytic Hydrogen Production. J. Am. Chem. Soc., 2025, 147, 16129–16140.
+49. Qiming Liu#, Shichen Xu#, Phelecia Scotland, Justin Sharp, Yi Cheng, Jaeho Shin, Nicholas Lowell Viscomi, Lucas Eddy, Shihui Chen, Bowen Li, Tengda Si, Carter Kittrell, Mine G. Ucak-Astarlioglu, James M. Tour*. Iron and Heavy Metal Removal from Bauxite Residues by Flash Joule Heating with Chlorination. ACS Appl. Mater. Interfaces, 2025, 17, 53576–53586.
+50. Yuyao Yang, Ye Fang, Erkang Feng, Wenjing Jiang, Xinchi Zhang, Longfei Liu, Yi Cheng, Fan Yang, Wenjuan Li, Fushun Liang, Kangyi Zheng, Bing Deng*, Qi Yue*, Zhongfan Liu*. Scalable, Universal in Situ Self-Heating Chemical Vapor Deposition Strategy for High-Quality Thick Turbostratic Graphene via Combined Twist–Tilt Configuration Engineering. J. Am. Chem. Soc., 2025, 147, 43805–43815.
+51. Jaeho Shin, Chi Hun Choi, Lucas Eddy, Xu Qi, Qiming Liu, Shichen Xu, Yi Cheng, Yimo Han, James M. Tour*. Stoichiometric Engineering of Indium Selenide Compounds Realized by Flash within-Flash with an Arc Welder. ACS Nano, 2025, 19, 41816–41823.
+52. Bowen Li*, Dallin Arnold, Yuchen Rui, Ana L. Santos, Jacob L. Beckham, Shichen Xu, Yi Cheng, Tengda Si, Qiming Liu, James M. Tour*. Precise and Mechanical Control of Calcium Signaling in Muscle Cells by Near-Infrared-Activated Molecular Jackhammers. ACS Nano, 2026, 20, 442–458.
+
+  </textarea>
+  <div class="toolbar">
+    <button id="render">Render</button>
+  </div>
+  <div class="note">
+    Format expected: each entry starts with <code>1.</code>, <code>2.</code>, ... and contains a 4-digit year (e.g., 2024).
+  </div>
+</details>
 
 <div class="toolbar">
-  <input id="q" placeholder="Search title / journal / year / keywords…" />
+  <input id="q" placeholder="Search author / title / journal / year / keywords…" />
   <button id="clear">Clear</button>
 </div>
 
-<div class="note">
-  Notes: <strong>#</strong> Co-first author; <strong>*</strong> Corresponding author.
-</div>
-
-<!-- =========================
-     PUB LIST START
-     ========================= -->
-
-<h2>2026</h2>
-<ol>
-  <li class="pub">
-    <span class="hl">Yi Cheng</span><span class="badge">*</span>, Alex Lathem, Phelecia Scotland, Qiming Liu, Jinhang Chen, Karla J. Silva, Tianyou Xie, Bowen Li, Youngkun Chung, Ralph Abdel Nour, Jaheo Shin, Lucas Eddy, Carter Kittrell, Haoxin Ye, Shihui Chen, Tenda Si, Obinna E. Onah, Michael Wong, Christopher Griggs, James M. Tour<span class="badge">*</span>.
-    <em>Waste-PFAS Assisted Electrothermal Fluorination for Lithium Recovery from Brine</em>. <strong>Nature Water</strong> (2026), Accepted.
-  </li>
-  <li class="pub">
-    <span class="hl">Yi Cheng</span><span class="badge">#</span><span class="badge">*</span>, Phelecia Scotland<span class="badge">#</span>, Qiming Liu, Tianyou Xie, Jaeho Shin, Victoria Granja, Karla J. Silva, Jinhang Chen, Tarence Rice, Chi Hun Choi, Carolyn H. Teng, John Li, Lorenzo Castelli, Lucas Eddy, Zicheng Wang, Mine G. Ucak-Astarlioglu, Yimo Han, Geoff Wehmeyer, Boris I. Yakobson, C. Fred Higgs III, Yufeng Zhao<span class="badge">*</span>, James M. Tour<span class="badge">*</span>.
-    <em>Fluorine-Assisted Flash Synthesis of Morphology Controllable Carbide Materials</em>. <strong>Matter</strong> (2026), Accepted.
-  </li>
-</ol>
-
-<h2>2025</h2>
-<ol>
-  <li class="pub">
-    <span class="hl">Yi Cheng</span>, James M. Tour<span class="badge">*</span>.
-    <em>Joule-heating Reactor Powers Scalable Plastic Upcycling</em>. <strong>Nature Chemical Engineering</strong> (2025) 2, 405–406.
-  </li>
-  <li class="pub">
-    <span class="hl">Yi Cheng</span><span class="badge">#</span><span class="badge">*</span>, Jin Xie<span class="badge">#</span>, Xu Cheng<span class="badge">#</span>, Guang Cui, Shuting Cheng, Wentao Yu, Kun Wang, Xu Zhou, Ke Chen, Zhipei Sun<span class="badge">*</span>, Kaihui Liu<span class="badge">*</span>, Zhongfan Liu<span class="badge">*</span>.
-    <em>Vertically Stacked Boron Nitride/Graphene for Tunable Antiresonant Hollow Core Fiber</em>. <strong>Journal of the American Chemical Society</strong> (2025) 147, 33735–33742.
-  </li>
-  <li class="pub">
-    <span class="hl">Yi Cheng</span><span class="badge">#</span><span class="badge">*</span>, Jinhang Chen<span class="badge">#</span>, Weiyin Chen<span class="badge">#</span>, Qiming Liu, Obinna E. Onah, Zicheng Wang, Gang Wu, Tianyou Xie, Lucas Eddy, Boris I. Yakobson, Ju Li<span class="badge">*</span>, Yufeng Zhao<span class="badge">*</span>, James M. Tour<span class="badge">*</span>.
-    <em>Rapid Electrothermal Rejuvenation of Spent Lithium Cobalt Oxide Cathode</em>. <strong>Energy &amp; Environmental Science</strong> (2025) 18, 608–6093.
-  </li>
-  <li class="pub">
-    <span class="hl">Yi Cheng</span>, James M. Tour<span class="badge">*</span>.
-    <em>Thermodynamic-Driven Graphene Layer Control: Converging Paradigms from Self-Correcting and Edge-Feeding Growth</em>. <strong>Science Bulletin</strong> (2025) 70, 3679–3681.
-  </li>
-  <li class="pub">
-    Jinhang Chen<span class="badge">#</span>, <span class="hl">Yi Cheng</span><span class="badge">#</span><span class="badge">*</span>, Phelecia Scotland, Jaeho Shin, Lorenzo Castelli, Qiming Liu, John Li, Kevin Wyss, Weiyin Chen, Kevin M. Wyss, Obinna E. Onah, Geoff Wehmeyer, Yufeng Zhao<span class="badge">*</span>, James M. Tour<span class="badge">*</span>.
-    <em>Dimension Engineering of Boron Nitride Nanostructures through Catalytic Flash Joule Heating</em>. <strong>ACS Nano</strong> (2025) 19, 24904–24911.
-  </li>
-  <li class="pub">
-    Mingjin Du<span class="badge">#</span>, <span class="hl">Yi Cheng</span><span class="badge">#</span>, Tianyou Xie<span class="badge">#</span>, Zhiliang Yang, Shen Xi, Karla J. Silva, Ma Chao, Channa Wang, Xiangbo Liu, Haiming Wang, Xiangdong Ding, Chengming Li<span class="badge">*</span>, James M. Tour<span class="badge">*</span>, Changsheng Xiang<span class="badge">*</span>.
-    <em>Nanodiamond Synthesis from Coal via Flash Joule Heating</em>. <strong>ACS Nano</strong> (2025) 19, 38942–38953.
-  </li>
-  <li class="pub">
-    Jinhang Chen<span class="badge">#</span>, Obinna E. Onah<span class="badge">#</span>, <span class="hl">Yi Cheng</span><span class="badge">#</span>, Karla J. Silva, Chi Hun Choi, Weiyin Chen, Shichen Xu, Lucas Eddy, Boris I. Yakobson, Yufeng Zhao<span class="badge">*</span>, James M. Tour<span class="badge">*</span>.
-    <em>Rapid Interphase Engineering for Fast-Charging LiFePO<sub>4</sub> Cathodes</em>. <strong>Small Methods</strong> (2025) 9, 2400680.
-  </li>
-</ol>
-
-<h2>2024</h2>
-<ol>
-  <li class="pub">
-    <span class="hl">Yi Cheng</span><span class="badge">#</span>, Jinhang Chen<span class="badge">#</span>, Bing Deng<span class="badge">#</span>, Weiyin Chen, Karla J. Silva, Lucas Eddy, Gang Wu, Ying Chen, Bowen Li, Carter Kittrell, Shichen Xu, Tengda Si, Angel A. Martí, Boris I. Yakobson, Yufeng Zhao<span class="badge">*</span>, James M. Tour<span class="badge">*</span>.
-    <em>Flash Upcycling of Waste Glass Fibre-Reinforced Plastics to Silicon Carbide</em>. <strong>Nature Sustainability</strong> (2024) 7, 452–462.
-  </li>
-  <li class="pub">
-    <span class="hl">Yi Cheng</span><span class="badge">#</span>, Bing Deng<span class="badge">#</span><span class="badge">*</span>, Phelecia Scotland, Lucas Eddy, Bo Wang, Bowen Li, Karla J. Silva, Kevin M. Wyss, Mine G. Ucak-Astarlioglu, Jinhang Chen, Qiming Liu, Tengda Si, Shichen Xu, Xiaodong Gao, Debadrita Jana, Mark Albert Torres, Michael S. Wong, Boris I. Yakobson, Yufeng Zhao<span class="badge">*</span>, James M. Tour<span class="badge">*</span>.
-    <em>Electrothermal Mineralization of Per- and Polyfluoroalkyl Substances for Soil Remediation</em>. <strong>Nature Communications</strong> (2024) 15, 6117.
-  </li>
-  <li class="pub">
-    Weiyin Chen<span class="badge">#</span>, <span class="hl">Yi Cheng</span><span class="badge">#</span>, Jinhang Chen<span class="badge">#</span>, Ksenia V. Bets, Rodrigo V. Salvatierra, Chang Ge, John Tianci Li, Zicheng Wang, Duy Xuan Luong, Carter Kittrell, Emily A. McHugh, Guanhui Gao, Bing Deng, Yimo Han, Boris I. Yakobson<span class="badge">*</span>, James M. Tour<span class="badge">*</span>.
-    <em>Nondestructive Flash Cathode Recycling</em>. <strong>Nature Communications</strong> (2024) 15, 6250.
-  </li>
-</ol>
-
-<h2>2023</h2>
-<ol>
-  <li class="pub">
-    Bing Deng<span class="badge">#</span><span class="badge">*</span>, Robert A. Carter<span class="badge">#</span>, <span class="hl">Yi Cheng</span><span class="badge">#</span>, Yuan Liu, Lucas Eddy, Kevin M. Wyss, Mine G. Ucak-Astarlioglu, Duy Xuan Luong, Khalil JeBailey, Carter Kittrell, Debadrita Jana, Mark Albert Torres, Janet Braam, James M. Tour<span class="badge">*</span>.
-    <em>High-Temperature Electrothermal Remediation of Multi-pollutants in Soil</em>. <strong>Nature Communications</strong> (2023) 14, 6371.
-  </li>
-</ol>
-
-<h2>2022</h2>
-<ol>
-  <li class="pub">
-    <span class="hl">Yi Cheng</span>, Shuting Cheng, Bingbing Chen, Jun Jiang, Ce Tu, Wenjuan Li, Yuyao Yang, Kewen Huang, Kun Wang, Hao Yuan, Junliang Li, Yue Qi<span class="badge">*</span>, Zhongfan Liu<span class="badge">*</span>.
-    <em>Graphene Infrared Radiation Management Targeting Photothermal Conversion for Electric-Energy-Free Crude Oil Collection</em>. <strong>Journal of the American Chemical Society</strong> (2022) 144, 15562–15568.
-  </li>
-  <li class="pub">
-    <span class="hl">Yi Cheng</span><span class="badge">#</span>, Guang Cui<span class="badge">#</span>, Changhao Liu<span class="badge">#</span>, Zhetong Liu, Longge Yan, Bingyao Liu, Hao Yuan, Pengcheng Shi, Jun Jiang, Kewen Huang, Kun Wang, Shuting Cheng, Junliang Li, Peng Gao, Xinfang Zhang<span class="badge">*</span>, Yue Qi<span class="badge">*</span>, Zhongfan Liu<span class="badge">*</span>.
-    <em>Electric Current Aligning Component Units during Graphene Fiber Joule Heating</em>. <strong>Advanced Functional Materials</strong> (2022) 32, 210349.
-  </li>
-  <li class="pub">
-    <span class="hl">Yi Cheng</span><span class="badge">#</span>, Wentao Yu<span class="badge">#</span>, Jin Xie<span class="badge">#</span>, Ruoyu Wang, Guang Cui, Xu Cheng, Mengwen Li, Kun Wang, Junliang Li, Zhipei Sun, Yue Qi<span class="badge">*</span>, Ke Chen<span class="badge">*</span>, Kaihui Liu<span class="badge">*</span>, Zhongfan Liu<span class="badge">*</span>.
-    <em>Controllable Growth of Graphene Photonic Crystal Fiber with Tunable Optical Nonlinearity</em>. <strong>ACS Photonics</strong> (2022) 9, 961–968.
-  </li>
-  <li class="pub">
-    Jiang Jun<span class="badge">#</span>, <span class="hl">Yi Cheng</span><span class="badge">#</span>, Xiucai Sun<span class="badge">#</span>, Kewen Huang, Kun Wang, Shuting Cheng, Hao Yuan, Ruojuan Liu, Wenjuan Li, Hui Zhang, Junliang Li, Ce Tu, Yue Qi<span class="badge">*</span>, Zhongfan Liu<span class="badge">*</span>.
-    <em>Flexible Full-surface Conformal Encapsulation for Each Fiber in Graphene Glass Fiber Fabric against Thermal Oxidation</em>. <strong>ACS Applied Materials &amp; Interfaces</strong> (2022) 14, 19889–19896.
-  </li>
-  <li class="pub">
-    <span class="hl">Yi Cheng</span>, Kun Wang, Yue Qi<span class="badge">*</span>, Zhongfan Liu<span class="badge">*</span>.
-    <em>Chemical Vapor Deposition Method for Graphene Fiber Materials</em>. <strong>Acta Physico-Chimica Sinica</strong> (2022) 38, 2006046.
-  </li>
-</ol>
-
-<h2>2020</h2>
-<ol>
-  <li class="pub">
-    Guang Cui<span class="badge">#</span>, <span class="hl">Yi Cheng</span><span class="badge">#</span>, Can Liu<span class="badge">#</span>, Kewen Huang, Junliang Li, Puxin Wang, Xiaojie Duan, Ke Chen<span class="badge">*</span>, Kaihui Liu<span class="badge">*</span>, Zhongfan Liu<span class="badge">*</span>.
-    <em>Massive Growth of Graphene Quartz Fiber as a Multifunctional Electrode</em>. <strong>ACS Nano</strong> (2020) 14, 5938–5945.
-  </li>
-</ol>
-
-<h2>2018</h2>
-<ol>
-  <li class="pub">
-    <span class="hl">Yi Cheng</span>, Jie Tang, Yi-Min Zhu, Yu Chang<span class="badge">*</span>, Zhen-Guo Yang<span class="badge">*</span>.
-    <em>3D Porous Polysiloxane Ion-Adsorption Films for Additive Fabrication of Conductive Patterns with High Adhesion</em>.
-    <strong>Electrochimica Acta</strong> (2018) 285, 111–119.
-  </li>
-</ol>
-
-<!-- =========================
-     PUB LIST END
-     ========================= -->
+<div id="pubOut"></div>
 
 <script>
-  const qEl = document.getElementById('q');
-  const clearBtn = document.getElementById('clear');
-
-  function normalize(s) { return (s || '').toLowerCase(); }
-
-  function applyFilter() {
-    const q = normalize(qEl.value.trim());
-    const pubs = document.querySelectorAll('li.pub');
-    pubs.forEach(li => {
-      const text = normalize(li.innerText);
-      li.style.display = (!q || text.includes(q)) ? '' : 'none';
-    });
-
-    document.querySelectorAll('h2').forEach(h2 => {
-      const section = h2.nextElementSibling;
-      if (!section || section.tagName !== 'OL') return;
-      const anyVisible = Array.from(section.querySelectorAll('li.pub'))
-        .some(li => li.style.display !== 'none');
-      h2.style.display = anyVisible ? '' : 'none';
-      section.style.display = anyVisible ? '' : 'none';
-    });
+  function escHtml(s) {
+    return (s || '').toString()
+      .replaceAll('&','&amp;')
+      .replaceAll('<','&lt;')
+      .replaceAll('>','&gt;')
+      .replaceAll('"','&quot;')
+      .replaceAll("'","&#039;");
   }
 
-  qEl.addEventListener('input', applyFilter);
-  clearBtn.addEventListener('click', () => { qEl.value = ''; applyFilter(); });
+  function highlightYiCheng(s) {
+    // 高亮 Yi Cheng（后面可能跟 #、*、,、空格、.）
+    return s.replace(/Yi Cheng(?=[#*,.\s])/g, '<span class="hl">Yi Cheng</span>');
+  }
+
+  function parseNumberedList(raw) {
+    const lines = raw.split('\n').map(x => x.trim()).filter(Boolean);
+    const items = [];
+    let buf = '';
+
+    for (const line of lines) {
+      if (/^\d+\.\s+/.test(line)) {
+        if (buf) items.push(buf.trim());
+        buf = line;
+      } else {
+        buf += ' ' + line; // allow wrapped lines
+      }
+    }
+    if (buf) items.push(buf.trim());
+    return items;
+  }
+
+  function extractYear(entry) {
+    // 抓 4 位年份（2000-2099），取最后出现的那个（避免出现两次年份时抓错）
+    const matches = entry.match(/\b20\d{2}\b/g);
+    if (!matches || !matches.length) return 'Unknown';
+    return matches[matches.length - 1];
+  }
+
+  function groupByYear(items) {
+    const groups = {};
+    for (const it of items) {
+      const y = extractYear(it);
+      if (!groups[y]) groups[y] = [];
+      groups[y].push(it);
+    }
+    // 年份排序：Unknown 最后，其余倒序
+    const years = Object.keys(groups).sort((a,b) => {
+      if (a === 'Unknown') return 1;
+      if (b === 'Unknown') return -1;
+      return Number(b) - Number(a);
+    });
+    return { groups, years };
+  }
+
+  function renderGrouped(items, query='') {
+    const q = (query || '').trim().toLowerCase();
+    const filtered = !q ? items : items.filter(it => it.toLowerCase().includes(q));
+
+    const out = document.getElementById('pubOut');
+    if (!filtered.length) {
+      out.innerHTML = '<p class="muted">No results.</p>';
+      return;
+    }
+
+    const { groups, years } = groupByYear(filtered);
+
+    const sections = years.map(y => {
+      const list = groups[y].map(it => {
+        let safe = escHtml(it);
+        safe = highlightYiCheng(safe);
+        // 简单规范空格（可选）
+        safe = safe.replace(/\s+,/g, ',').replace(/,\s+/g, ', ');
+        return `<li class="pub">${safe}</li>`;
+      }).join('');
+
+      return `
+        <h2 class="year">${y}</h2>
+        <ol>${list}</ol>
+      `;
+    }).join('');
+
+    out.innerHTML = sections;
+  }
+
+  function main() {
+    const t = document.getElementById('pubText');
+    const q = document.getElementById('q');
+    const btnRender = document.getElementById('render');
+    const btnClear = document.getElementById('clear');
+
+    function getItems() {
+      return parseNumberedList(t.value || '');
+    }
+
+    function doRender() {
+      const items = getItems();
+      renderGrouped(items, q.value || '');
+    }
+
+    btnRender.addEventListener('click', doRender);
+    q.addEventListener('input', doRender);
+    btnClear.addEventListener('click', () => { q.value = ''; doRender(); });
+
+    // 初次渲染：如果你没粘贴，页面会显示 No results
+    doRender();
+  }
+
+  main();
 </script>
 
 </body>

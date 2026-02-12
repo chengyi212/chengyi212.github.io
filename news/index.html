@@ -24,7 +24,7 @@
   <ul id="newsAll" class="news-list" aria-label="All news"></ul>
 
   <script>
-    const NEWS_JSON = "/data/news.json";
+    const NEWS_JSON = "../data/news.json";
     const NEWS_PAGE_PREFIX = "/news/";
 
     function fmtDate(iso) {
@@ -32,7 +32,19 @@
       const dt = new Date(Date.UTC(y, m-1, d));
       return dt.toLocaleDateString(undefined, { year:"numeric", month:"short", day:"2-digit", timeZone:"UTC" });
     }
+    
+     function todayFormatted() {
+  const dt = new Date();
+  return dt.toLocaleDateString(undefined, {
+    year: "numeric",
+    month: "long",
+    day: "2-digit"
+  });
+}
 
+function displayDate(it) {
+  return it.date ? fmtDate(it.date) : todayFormatted();
+}
     async function loadAllNews() {
       const res = await fetch(NEWS_JSON, { cache: "no-store" });
       if (!res.ok) throw new Error("Failed to load news.json");
@@ -46,7 +58,7 @@
         const li = document.createElement("li");
         li.className = "news-item";
         li.innerHTML = `
-          <div class="news-date">${fmtDate(it.date)}</div>
+          <div class="news-date">${displayDate(it)}</div>
           <div>
             <a href="${NEWS_PAGE_PREFIX}${it.slug}.html">${it.title}</a>
             ${it.tag ? `<span class="tag">${it.tag}</span>` : ""}

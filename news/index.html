@@ -23,37 +23,42 @@
 
   <ul id="newsAll" class="news-list" aria-label="All news"></ul>
 
-  <script>
-    const NEWS_JSON = "../data/news.json";
-    const NEWS_PAGE_PREFIX = "/news/";
+<script>
+  const NEWS_JSON = "/data/news.json";   // 用绝对路径最稳
+  const NEWS_PAGE_PREFIX = "/news/";
 
-    function fmtDate(iso) {
-      const [y,m,d] = iso.split("-").map(Number);
-      const dt = new Date(Date.UTC(y, m-1, d));
-      return dt.toLocaleDateString(undefined, { year:"numeric", month:"short", day:"2-digit", timeZone:"UTC" });
-    }
-    
-     function todayFormatted() {
-  const dt = new Date();
-  return dt.toLocaleDateString(undefined, {
-    year: "numeric",
-    month: "long",
-    day: "2-digit"
-  });
-}
+  function fmtDate(iso) {
+    const [y,m,d] = iso.split("-").map(Number);
+    const dt = new Date(Date.UTC(y, m-1, d));
+    return dt.toLocaleDateString(undefined, { year:"numeric", month:"short", day:"2-digit", timeZone:"UTC" });
+  }
 
-function displayDate(it) {
-  return it.date ? fmtDate(it.date) : todayFormatted();
-}
-    async function loadAllNews() {
+  function todayFormatted() {
+    const dt = new Date();
+    return dt.toLocaleDateString(undefined, {
+      year: "numeric",
+      month: "long",
+      day: "2-digit"
+    });
+  }
+
+  function displayDate(it) {
+    return (it && it.date) ? fmtDate(it.date) : todayFormatted();
+  }
+
+  async function loadAllNews() {
+    const ul = document.getElementById("newsAll");
+    try {
       const res = await fetch(NEWS_JSON, { cache: "no-store" });
-      if (!res.ok) throw new Error("Failed to load news.json");
+      if (!res.ok) throw new Error(`Failed to fetch: ${res.status} ${res.statusText}`);
+
       const items = await res.json();
-      items.sort((a,b) => (a.date < b.date ? 1 : -1));
+      if (!Array.isArray(items)) throw new Error("news.json must be an array: [ { ... }, ... ]");
 
-      const ul = document.getElementById("newsAll");
+      // 有 date 的按 date 倒序；没 date 的放最后
+      items.sort((a, b) => ((b.date || "")).localeCompare(a.date || ""));
+
       ul.innerHTML = "";
-
       for (const it of items) {
         const li = document.createElement("li");
         li.className = "news-item";
@@ -66,13 +71,18 @@ function displayDate(it) {
         `;
         ul.appendChild(li);
       }
-    }
-
-    loadAllNews().catch(err => {
-      document.getElementById("newsAll").innerHTML =
-        `<li class="news-item"><div class="news-date"></div><div>Unable to load news.</div></li>`;
+    } catch (err) {
+      ul.innerHTML = `
+        <li class="news-item">
+          <div class="news-date"></div>
+          <div>Unable to load news. <span style="color:#888;">(${String(err.message || err)})</span></div>
+        </li>`;
       console.error(err);
-    });
-  </script>
+    }
+  }
+
+  loadAllNews();
+</script>
+
 </body>
 </html>

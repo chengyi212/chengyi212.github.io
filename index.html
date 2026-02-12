@@ -240,11 +240,14 @@
   const NEWS_JSON = "/data/news.json";
   const NEWS_PAGE_PREFIX = "/news/";
 
-  function fmtDate(iso) {
-    const [y,m,d] = iso.split("-").map(Number);
-    const dt = new Date(Date.UTC(y, m-1, d));
-    return dt.toLocaleDateString(undefined, { year:"numeric", month:"short", day:"2-digit", timeZone:"UTC" });
-  }
+function todayFormatted() {
+  const dt = new Date();
+  return dt.toLocaleDateString(undefined, {
+    year: "numeric",
+    month: "long",
+    day: "2-digit"
+  });
+}
 
   async function loadNewsHome() {
     const res = await fetch(NEWS_JSON, { cache: "no-store" });
@@ -256,13 +259,14 @@
     const ul = document.getElementById("newsList");
     if (!ul) return;
 
-    ul.innerHTML = latest.map(it => `
-      <li style="margin:8px 0;">
-        <span style="color:#666; font-variant-numeric:tabular-nums; margin-right:10px;">${fmtDate(it.date)}</span>
-        <a href="${NEWS_PAGE_PREFIX}${it.slug}.html">${it.title}</a>
-      </li>
-    `).join("");
-  }
+ul.innerHTML = latest.map(it => `
+  <li style="margin:8px 0;">
+    <span style="color:#666; margin-right:10px;">
+      ${todayFormatted()}
+    </span>
+    <a href="${NEWS_PAGE_PREFIX}${it.slug}.html">${it.title}</a>
+  </li>
+`).join("");
 
   loadNewsHome().catch(console.error);
 </script>

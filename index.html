@@ -196,6 +196,12 @@
   </div>
 </div>
 
+<section id="news">
+  <h2>News</h2>
+  <ul id="newsList" style="list-style:none;padding-left:0;"></ul>
+  <p><a href="/news/">View all →</a></p>
+</section>
+
 <hr>
 
 <div class="card">
@@ -226,6 +232,37 @@
   </div>
 </div>
 </div>
+
+<script>
+  const NEWS_JSON = "/data/news.json";
+  const NEWS_PAGE_PREFIX = "/news/";
+
+  function fmtDate(iso) {
+    const [y,m,d] = iso.split("-").map(Number);
+    const dt = new Date(Date.UTC(y, m-1, d));
+    return dt.toLocaleDateString(undefined, { year:"numeric", month:"short", day:"2-digit", timeZone:"UTC" });
+  }
+
+  async function loadNewsHome() {
+    const res = await fetch(NEWS_JSON, { cache: "no-store" });
+    if (!res.ok) throw new Error("Failed to load news.json");
+    const items = await res.json();
+    items.sort((a,b) => (a.date < b.date ? 1 : -1));
+
+    const latest = items.slice(0, 5);
+    const ul = document.getElementById("newsList");
+    if (!ul) return;
+
+    ul.innerHTML = latest.map(it => `
+      <li style="margin:8px 0;">
+        <span style="color:#666; font-variant-numeric:tabular-nums; margin-right:10px;">${fmtDate(it.date)}</span>
+        <a href="${NEWS_PAGE_PREFIX}${it.slug}.html">${it.title}</a>
+      </li>
+    `).join("");
+  }
+
+  loadNewsHome().catch(console.error);
+</script>
 
 </body>
 </html>

@@ -240,36 +240,67 @@
   const NEWS_JSON = "/data/news.json";
   const NEWS_PAGE_PREFIX = "/news/";
 
-function todayFormatted() {
-  const dt = new Date();
-  return dt.toLocaleDateString(undefined, {
-    year: "numeric",
-    month: "long",
-    day: "2-digit"
-  });
-}
+  function fmtDate(iso) {
+    const [y, m, d] = iso.split("-").map(Number);
+    const dt = new Date(Date.UTC(y, m - 1, d));
+    return dt.toLocaleDateString(undefined, {
+      year: "numeric",
+      month: "short",
+      day: "2-digit",
+      timeZone: "UTC"
+    });
+  }
+
+  function todayFormatted() {
+    const dt = new Date();
+    return dt.toLocaleDateString(undefined, {
+      year: "numeric",
+      month: "long",
+      day: "2-digit"
+    });
+  }
+
+  function displayDate(it) {
+    // 你想“自动今天日期”就用 todayFormatted()
+    // 如果你以后想显示真实发布日期：news.json 里加 date，就会优先显示 date
+    return it && it.date ? fmtDate(it.date) : todayFormatted();
+  }
 
   async function loadNewsHome() {
-    const res = await fetch(NEWS_JSON, { cache: "no-store" });
-    if (!res.ok) throw new Error("Failed to load news.json");
-    const items = await res.json();
-    items.sort((a,b) => (a.date < b.date ? 1 : -1));
-
-    const latest = items.slice(0, 5);
     const ul = document.getElementById("newsList");
     if (!ul) return;
 
-ul.innerHTML = latest.map(it => `
-  <li style="margin:8px 0;">
-    <span style="color:#666; margin-right:10px;">
-      ${todayFormatted()}
-    </span>
-    <a href="${NEWS_PAGE_PREFIX}${it.slug}.html">${it.title}</a>
-  </li>
-`).join("");
+    try {
+      const res = await fetch(NEWS_JSON, { cache: "no-store" });
+      if (!res.ok) throw new Error(`Failed to load news.json: ${res.status}`);
 
-  loadNewsHome().catch(console.error);
+      const items = await res.json();
+      if (!Array.isArray(items)) throw new Error("news.json must be an array");
+
+      // 有 date 的按 date 倒序；没 date 的放后面
+      items.sort((a, b) => ((b.date || "")).localeCompare(a.date || ""));
+
+      const latest = items.slice(0, 5);
+      ul.innerHTML = latest
+        .map(
+          (it) => `
+            <li style="margin:8px 0;">
+              <span style="color:#666; margin-right:10px;">
+                ${displayDate(it)}
+              </span>
+              <a href="${NEWS_PAGE_PREFIX}${it.slug}.html">${it.title}</a>
+            </li>`
+        )
+        .join("");
+    } catch (err) {
+      ul.innerHTML = `<li style="color:#888;">Unable to load news. (${String(err.message || err)})</li>`;
+      console.error(err);
+    }
+  }
+
+  loadNewsHome();
 </script>
+
 
 </body>
 </html>

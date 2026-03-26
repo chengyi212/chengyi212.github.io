@@ -256,29 +256,16 @@
   const NEWS_PAGE_PREFIX = "/news/";
 
   function fmtDate(iso) {
-    const [y, m, d] = iso.split("-").map(Number);
-    const dt = new Date(Date.UTC(y, m - 1, d));
-    return dt.toLocaleDateString(undefined, {
-      year: "numeric",
-      month: "short",
-      day: "2-digit",
-      timeZone: "UTC"
-    });
-  }
+    if (!iso) return "";
 
-  function todayFormatted() {
-    const dt = new Date();
-    return dt.toLocaleDateString(undefined, {
-      year: "numeric",
-      month: "long",
-      day: "2-digit"
-    });
+    // 关键：避免时区问题，直接字符串处理
+    const [y, m, d] = iso.split("-");
+    return `${y}年${Number(m)}月${Number(d)}日`;
   }
 
   function displayDate(it) {
-    // 你想“自动今天日期”就用 todayFormatted()
-    // 如果你以后想显示真实发布日期：news.json 里加 date，就会优先显示 date
-    return it && it.date ? fmtDate(it.date) : todayFormatted();
+    // 强制使用固定发布日期
+    return fmtDate(it.date);
   }
 
   async function loadNewsHome() {
@@ -292,10 +279,11 @@
       const items = await res.json();
       if (!Array.isArray(items)) throw new Error("news.json must be an array");
 
-      // 有 date 的按 date 倒序；没 date 的放后面
-      items.sort((a, b) => ((b.date || "")).localeCompare(a.date || ""));
+      // 按 date 倒序（确保都有 date）
+      items.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
 
       const latest = items.slice(0, 5);
+
       ul.innerHTML = latest
         .map(
           (it) => `
